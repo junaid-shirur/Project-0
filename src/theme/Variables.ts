@@ -12,7 +12,7 @@ import { ThemeNavigationColors } from '../../@types/theme';
  */
 export const Colors = {
   transparent: 'rgba(0,0,0,0)',
-  inputBackground: '#FFFFFF',
+  inputBackground: '#F1F4FF',
   white: '#ffffff',
   //Typography
   textGray800: '#000000',
@@ -24,9 +24,11 @@ export const Colors = {
   //ComponentColors
   circleButtonBackground: '#E1E1EF',
   circleButtonColor: '#44427D',
-  black: "#DDDD",
+  black: "#000",
   grey: "#808080",
-  blue: "#1F41BB"
+  blue: "#1F41BB",
+  background: "#f8f9fa",
+  input: "#626262",
 };
 
 export const NavigationColors: Partial<ThemeNavigationColors> = {

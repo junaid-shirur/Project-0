@@ -1,8 +1,8 @@
 import { Colors } from '@/theme/Variables';
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, ViewStyle } from 'react-native';
+import { View, TextInput, StyleSheet, ViewStyle, TextInputProps } from 'react-native';
 
-interface InputFieldProps {
+interface InputFieldProps extends TextInputProps {
   placeholder: string;
   onChangeText: () => void;
   containerStyle: ViewStyle

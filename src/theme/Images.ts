@@ -11,6 +11,7 @@ export default function ({}: ThemeVariables) {
       bottomRight: require('./assets/images/sparkles-bottom-right.png'),
       bottom: require('./assets/images/sparkles-bottom.png'),
       bottomLeft: require('./assets/images/sparkles-bottom-left.png'),
+      WFH: require('./assets/images/Work_from_home.png')
     },
     icons: {
       colors: require('./assets/images/colorswatch.png'),

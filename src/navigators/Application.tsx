@@ -11,6 +11,7 @@ import MainNavigator from './Main';
 import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
 import Register from '@/screens/auth/Register';
+import OnBoarding from '@/screens/auth/Onboarding';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -30,6 +31,7 @@ const ApplicationNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Startup" component={Startup} />
           <Stack.Screen name="Main" component={MainNavigator} />
+          <Stack.Screen name="OnBoarding" component={OnBoarding} />
           <Stack.Screen name="Register" component={Register} />
         </Stack.Navigator>
       </NavigationContainer>

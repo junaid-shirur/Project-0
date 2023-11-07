@@ -1,6 +1,5 @@
 import { useTheme } from '@/hooks';
 import { Colors } from '../../theme/Variables';
-import { NavigatorScreenParams } from '@react-navigation/native';
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -13,7 +12,7 @@ import Wrapper from '@/components/Container';
 import Button from '@/components/Button';
 
 interface LoginProps {
-  navigation: NavigatorScreenParams<{ screen: 'Login' }>;
+  navigation: any;
 }
 
 const Login: React.FC<LoginProps> = ({ navigation }) => {
@@ -84,7 +83,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
               btnText="Create new account"
               btnStyles={{ marginTop: 150 }}
               btnTextStyles={{ color: Colors.black }}
-              onPress={() => {}}
+              onPress={() => navigation.navigate("Register")}
             />
           </View>
         </KeyboardAvoidingView>

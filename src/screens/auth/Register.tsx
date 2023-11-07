@@ -1,23 +1,20 @@
 import { useTheme } from '@/hooks';
 import { Colors } from '../../theme/Variables';
-import { NavigatorScreenParams } from '@react-navigation/native';
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  SafeAreaView,
-  Pressable,
-} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import InputField from '@/components/InputField';
 import Wrapper from '@/components/Container';
 import Button from '@/components/Button';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ApplicationStackParamList } from 'types/navigation';
+
+type RegisterScreenNavigationProp = StackNavigationProp<
+  ApplicationStackParamList,
+  'Register'
+>;
 
 interface RegisterProps {
-  navigation: NavigatorScreenParams<{ screen: 'Register' }>;
+  navigation: RegisterScreenNavigationProp;
 }
 
 const Register: React.FC<RegisterProps> = ({ navigation }) => {
@@ -78,8 +75,14 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
           />
           <Button
             btnText="Sign Up"
-            btnStyles={{ marginTop: 150 }}
+            type="primary"
+            btnStyles={{ marginTop: 120 }}
             onPress={() => {}}
+          />
+          <Button
+            btnText="Already have an account"
+            btnStyles={{ marginTop: 30 }}
+            onPress={() => navigation.navigate('Login')}
           />
         </View>
       </View>

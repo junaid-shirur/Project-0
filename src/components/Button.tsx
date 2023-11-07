@@ -1,14 +1,15 @@
 import { Colors } from '@/theme/Variables';
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet, ViewStyle } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
 interface ButtonProps {
-  onPress: () => void;
-  btnText: string;
-  btnStyles?: ViewStyle;
+  onPress: () => void
+  btnText: string
+  btnStyles?: ViewStyle
+  btnTextStyles?: TextStyle
   type?: 'primary' | 'secondary'
 }
-const Button: React.FC<ButtonProps> = ({ onPress, btnStyles, btnText, type }) => {
+const Button: React.FC<ButtonProps> = ({ onPress, btnStyles, btnText, type, btnTextStyles }) => {
   const styles = StyleSheet.create({
     button: {
       paddingHorizontal: 20,
@@ -33,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({ onPress, btnStyles, btnText, type }) =>
   });
   return (
     <TouchableOpacity style={[styles.button, btnStyles]} onPress={onPress}>
-      <Text style={styles.text}>{btnText}</Text>
+      <Text style={[styles.text,btnTextStyles]}>{btnText}</Text>
     </TouchableOpacity>
   );
 };

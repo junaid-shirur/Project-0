@@ -10,6 +10,7 @@ export type ApplicationStackParamList = {
   Main: NavigatorScreenParams<MainParamsList>;
   OnBoarding: NavigatorScreenParams<{}>;
   Register: NavigatorScreenParams<{}>;
+  Login: NavigatorScreenParams<{}>;
 };
 
 export type ApplicationScreenProps =

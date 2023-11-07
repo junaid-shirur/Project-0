@@ -12,6 +12,7 @@ import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
 import Register from '@/screens/auth/Register';
 import OnBoarding from '@/screens/auth/Onboarding';
+import Login from '@/screens/auth/Login';
 
 const Stack = createStackNavigator<ApplicationStackParamList>();
 
@@ -33,6 +34,7 @@ const ApplicationNavigator = () => {
           <Stack.Screen name="Main" component={MainNavigator} />
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
           <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

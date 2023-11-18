@@ -1,12 +1,7 @@
 import { useTheme } from '@/hooks';
 import { Colors } from '../../theme/Variables';
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  KeyboardAvoidingView,
-} from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView } from 'react-native';
 import InputField from '@/components/InputField';
 import Wrapper from '@/components/Container';
 import Button from '@/components/Button';
@@ -50,10 +45,10 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
     },
   });
 
-  const [creds, setCreds] = useState<UserCred>({email: "", password: ""});
-  const [login, { data,error, isSuccess, isLoading }] =
-    useLoginMutation();
-  console.log("CRED", data, isSuccess, isLoading,error)
+  const [creds, setCreds] = useState<UserCred>({ email: '', password: '' });
+  const [login, { data, error, isSuccess, isLoading }] = useLoginMutation();
+
+  console.log('CRED', data, isSuccess, isLoading, error);
   return (
     <Wrapper>
       <View style={{ flex: 1 }}>
@@ -64,12 +59,16 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
             <InputField
               containerStyle={styles.inputConatainer}
               placeholder="Email"
-              onChangeText={(val: string) => setCreds(e => ({...e, email: val}))}
+              onChangeText={(val: string) =>
+                setCreds(e => ({ ...e, email: val }))
+              }
             />
             <InputField
               containerStyle={styles.inputConatainer}
               placeholder="Password"
-              onChangeText={(val: string) => setCreds(e => ({...e, password: val}))}
+              onChangeText={(val: string) =>
+                setCreds(e => ({ ...e, password: val }))
+              }
             />
             <Button
               btnText="Forgot password ?"
@@ -87,7 +86,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
               btnText="Create new account"
               btnStyles={{ marginTop: 150 }}
               btnTextStyles={{ color: Colors.black }}
-              onPress={() => navigation.navigate("Register")}
+              onPress={() => navigation.navigate('Register')}
             />
           </View>
         </KeyboardAvoidingView>

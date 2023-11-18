@@ -4,7 +4,7 @@ import { View, TextInput, StyleSheet, ViewStyle, TextInputProps } from 'react-na
 
 interface InputFieldProps extends TextInputProps {
   placeholder: string;
-  onChangeText: () => void;
+  onChangeText: (val: string) => void;
   containerStyle: ViewStyle
 }
 

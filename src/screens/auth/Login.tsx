@@ -10,6 +10,8 @@ import {
 import InputField from '@/components/InputField';
 import Wrapper from '@/components/Container';
 import Button from '@/components/Button';
+import { UserCred } from '@/services/modules/auth/types';
+import { useLoginMutation } from '@/services/modules/auth';
 
 interface LoginProps {
   navigation: any;
@@ -48,8 +50,10 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
     },
   });
 
-  const [isPasswordShown, setIsPasswordShown] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const [creds, setCreds] = useState<UserCred>({email: "", password: ""});
+  const [login, { data,error, isSuccess, isLoading }] =
+    useLoginMutation();
+  console.log("CRED", data, isSuccess, isLoading,error)
   return (
     <Wrapper>
       <View style={{ flex: 1 }}>
@@ -60,12 +64,12 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
             <InputField
               containerStyle={styles.inputConatainer}
               placeholder="Email"
-              onChangeText={() => {}}
+              onChangeText={(val: string) => setCreds(e => ({...e, email: val}))}
             />
             <InputField
               containerStyle={styles.inputConatainer}
               placeholder="Password"
-              onChangeText={() => {}}
+              onChangeText={(val: string) => setCreds(e => ({...e, password: val}))}
             />
             <Button
               btnText="Forgot password ?"
@@ -77,7 +81,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
               btnText="Sign in"
               type="primary"
               btnStyles={{ marginTop: 20 }}
-              onPress={() => {}}
+              onPress={() => login(creds)}
             />
             <Button
               btnText="Create new account"
